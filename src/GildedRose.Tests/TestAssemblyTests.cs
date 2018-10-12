@@ -1,4 +1,4 @@
-using GildedRose.Console;
+using GildedRose;
 using System.Collections.Generic;
 using NFluent;
 using Xunit;
@@ -10,11 +10,11 @@ namespace GildedRose.Tests
         [Fact]
         public void Backstage_sellin_negative_and_quality_less_50()
         {
-            var app = new Program()
+            var app = new GildedRose()
             {
-                Items = new List<Item>
+                Items = new List<RoseItem>
                 {
-                    new Item {Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -1, Quality = 20}
+                    new RoseItem {Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -1, Quality = 20}
                 }
             };
             app.UpdateQuality();
@@ -25,11 +25,11 @@ namespace GildedRose.Tests
         [Fact]
         public void OrdinaryRose_sellin_negative_and_quality_less_50()
         {
-            var app = new Program()
+            var app = new GildedRose()
             {
-                Items = new List<Item>
+                Items = new List<RoseItem>
                 {
-                    new Item {Name = "Elixir", SellIn = -1, Quality = 20}
+                    new RoseItem {Name = "Elixir", SellIn = -1, Quality = 20}
                 }
             };
             app.UpdateQuality();
@@ -40,11 +40,11 @@ namespace GildedRose.Tests
         [Fact]
         public void AgedBrie_sellin_negative_and_quality_less_50()
         {
-            var app = new Program()
+            var app = new GildedRose()
             {
-                Items = new List<Item>
+                Items = new List<RoseItem>
                 {
-                    new Item {Name = "Aged Brie", SellIn = -1, Quality = 20}
+                    new RoseItem {Name = "Aged Brie", SellIn = -1, Quality = 20}
                 }
             };
             app.UpdateQuality();
